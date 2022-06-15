@@ -10,6 +10,6 @@
     mode: push
     src: '{{ src_path }}'
     dest: '{{ dest_path }}'
-  delegate_to: 178.154.192.98
+  delegate_to: '{{ build_server }}'
   notify:
   - restart tomcat
