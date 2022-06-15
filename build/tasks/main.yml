@@ -10,6 +10,3 @@
   git: repo={{ git_url }} dest={{ git_folder }}
   notify:
     - package app
-
-- name: fetch war
-  fetch: src={{ git_folder }}/target/hello-1.0.war dest=/tmp/

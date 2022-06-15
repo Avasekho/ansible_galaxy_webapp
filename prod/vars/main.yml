@@ -1,3 +1,4 @@
 ---
 # vars file for prod
+src_path: /tmp/boxfuse/target/hello-1.0.war
 dest_path: /var/lib/tomcat9/webapps/

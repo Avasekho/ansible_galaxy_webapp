@@ -5,5 +5,9 @@
   with_items:
       - tomcat9
 
-- name: Copy war
-  copy: src=/tmp/hello-1.0.war dest={{ dest_path }}
+- name: sync war
+  synchronize:
+      mode: push
+      src: {{ src_path }}
+      dest: {{ dest_path }}
+    delegate_to: 178.154.192.98
