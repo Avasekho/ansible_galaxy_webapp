@@ -1,6 +1,2 @@
 ---
 # handlers file for build
-- name: package app
-  shell: 
-    chdir: '{{ git_folder }}' 
-    cmd: mvn package

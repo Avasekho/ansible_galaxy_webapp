@@ -8,5 +8,8 @@
 
 - name: clone files from Git repository (and repackage if cloned)
   git: repo={{ git_url }} dest={{ git_folder }}
-  notify:
-    - package app
+
+- name: package app
+  shell: 
+    chdir: '{{ git_folder }}' 
+    cmd: mvn package
