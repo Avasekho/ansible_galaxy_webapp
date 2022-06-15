@@ -3,13 +3,13 @@
 - name: Ensure apps for maven are installed
   apt: name={{ item }} state=present
   with_items:
-      - default-jdk
-      - maven
+    - default-jdk
+    - maven
 
-- name: clone files from Git repository
+- name: clone files from Git repository (and repackage if cloned)
   git: repo={{ git_url }} dest={{ git_folder }}
+  notify:
+    - package app
 
-- name: run maven
-  shell: 
-    chdir={{ git_folder }}
-    cmd: mvn package
+- name: fetch war
+  fetch: src={{ git_folder }}/target/hello-1.0.war dest=/tmp/
