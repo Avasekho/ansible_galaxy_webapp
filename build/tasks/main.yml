@@ -1,10 +1,7 @@
 ---
 # tasks file for build
 - name: Ensure apps for maven are installed
-  apt: name={{ item }} state=present
-  with_items:
-    - default-jdk
-    - maven
+  apt: name=['default-jdk', 'maven'] state=present
 
 - name: clone files from Git repository (and repackage if cloned)
   git: repo={{ git_url }} dest={{ git_folder }}
