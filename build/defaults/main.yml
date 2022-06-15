@@ -1,2 +1,4 @@
 ---
 # defaults file for build
+git_url: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+git_folder: /tmp/boxfuse

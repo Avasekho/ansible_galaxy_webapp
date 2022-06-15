@@ -1,2 +1,6 @@
 ---
 # tasks file for common
+- name: Ensure apps for are installed
+  apt: name={{ item }} state=present
+  with_items:
+      - git
